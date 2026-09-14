@@ -1,323 +1,535 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<meta name="description" content="Skill Bridge Hub Initiative trains marginalised youth, young mothers and school dropouts in knitting and sewing in Masaka, Uganda — practical skills, mentorship and entrepreneurship guidance.">
+<meta name="keywords" content="knitting training Uganda, sewing training Masaka, skills training, vocational training Uganda, Skill Bridge Hub Initiative">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Skill Bridge Hub Initiative — Knitting & Sewing Training, Masaka">
+<meta property="og:description" content="Practical, inclusive knitting and sewing training for marginalised youth, young mothers and school dropouts in Masaka, Uganda.">
+<meta property="og:image" content="images/training2.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#141414">
+<title>Skill Bridge Hub Initiative — Knitting & Sewing Training, Masaka</title>
 
-<title>Maggie's Knit and Sew Hub</title>
-<link rel="preload" as="image" href="images/training2.jpg">
+<!-- Update this once the live domain is confirmed -->
+<!-- <link rel="canonical" href="https://www.yourdomain.com/"> -->
+
+<link rel="icon" href="images/maggie-logo.jpeg">
+<link rel="preload" as="image" href="images/training2.jpg" fetchpriority="high">
+
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap">
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "Skill Bridge Hub Initiative",
+  "description": "Knitting and sewing training for marginalised youth, young mothers and school dropouts.",
+  "email": "skillbridgehubinitiative@gmail.com",
+  "telephone": "+256777657004",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Masaka",
+    "addressCountry": "UG"
+  }
+}
+</script>
+
+<style>
+  :root{
+    --ink:#141414;
+    --slate:#2f4f4f;
+    --teal:#0fa89f;
+    --teal-dark:#0b7f78;
+    --gold:#d99a3c;
+    --cream:#fbfaf7;
+    --text:#20262a;
+    --nav-h:64px;
+    --marquee-h:40px;
+  }
+
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+
+  body{
+    font-family:'Inter', sans-serif;
+    color:var(--text);
+    background:var(--cream);
+    overflow-x:hidden;
+    padding-top: calc(var(--nav-h) + var(--marquee-h));
+  }
+
+  h1,h2,h3{ font-family:'Fraunces', serif; font-weight:600; line-height:1.15; }
+  img{ max-width:100%; display:block; }
+  a{ color:inherit; }
+
+  /* ---------- animation ---------- */
+  .animate{ transform:translateY(24px); opacity:0; transition:transform .7s ease, opacity .7s ease; }
+  .animate.show{ transform:translateY(0); opacity:1; }
+
+  @media (prefers-reduced-motion: reduce){
+    .animate{ transform:none; opacity:1; transition:none; }
+    .marquee-track{ animation:none; }
+    .whatsapp-float{ animation:none; }
+  }
+
+  /* ---------- navbar ---------- */
+  .navbar{
+    position:fixed; top:0; left:0; right:0; height:var(--nav-h);
+    display:flex; align-items:center; justify-content:space-between;
+    padding:0 1.5rem; background:var(--ink); color:#fff; z-index:1000;
+  }
+
+  .logo img{ width:44px; height:44px; object-fit:cover; border-radius:50%; border:2px solid var(--teal); }
+  .nav2{ display:flex; align-items:center; }
+  .navbar ul{ display:flex; gap:1.75rem; list-style:none; }
+  .navbar a{ color:#fff; text-decoration:none; font-size:.95rem; letter-spacing:.02em; }
+  .navbar a:hover, .navbar a:focus-visible{ color:var(--teal); }
+
+  .menu{ display:none; background:none; border:none; color:#fff; font-size:1.6rem; cursor:pointer; margin-left:1rem; }
+  :focus-visible{ outline:2px solid var(--teal); outline-offset:2px; }
+
+  /* ---------- marquee ---------- */
+  .marquee{
+    position:fixed; top:var(--nav-h); left:0; right:0; height:var(--marquee-h);
+    overflow:hidden; background:var(--gold); z-index:999;
+    border-top:1px dashed rgba(0,0,0,.35); border-bottom:1px dashed rgba(0,0,0,.35);
+  }
+
+  .marquee-track{ display:flex; width:max-content; height:100%; align-items:center; animation:scrollLoop 16s linear infinite; }
+  .marquee-track span{ padding:0 3rem; white-space:nowrap; font-size:.85rem; font-weight:600; letter-spacing:.04em; color:var(--ink); }
+
+  @keyframes scrollLoop{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+
+  .stitch-divider{ height:0; border-top:2px dashed rgba(20,20,20,.15); }
+
+  /* ---------- hero ---------- */
+  .hero{
+    min-height:88vh;
+    background:linear-gradient(rgba(10,15,15,.45),rgba(10,15,15,.55)), url('images/training2.jpg') center/cover;
+    display:flex; align-items:center; color:#fff;
+  }
+
+  .hero-content{ padding:3rem 1.5rem; max-width:620px; margin:0 auto; width:100%; }
+  .hero-content h1{ font-size:clamp(2.1rem, 5vw, 3.2rem); color:#fff; }
+  .hero-content h1 em{ font-style:italic; color:var(--teal); }
+  .hero-paragraph{ margin-top:1.1rem; font-size:1.05rem; line-height:1.6; max-width:52ch; color:#f1f1f1; }
+  .hero-buttons{ margin-top:1.75rem; display:flex; gap:.85rem; flex-wrap:wrap; }
+
+  .btn{ background:var(--teal); padding:.85rem 1.6rem; text-decoration:none; color:#08201e; font-weight:600; border-radius:2px; transition:background .25s; }
+  .btn:hover, .btn:focus-visible{ background:var(--teal-dark); color:#fff; }
+
+  .btn-outline{ border:2px solid #fff; padding:.85rem 1.6rem; color:#fff; text-decoration:none; font-weight:600; border-radius:2px; }
+  .btn-outline:hover, .btn-outline:focus-visible{ background:#fff; color:var(--ink); }
+
+  /* ---------- full-width section shell ---------- */
+  .section{ width:100%; padding:4.5rem 1.5rem; }
+  .section-inner{ max-width:1100px; margin:0 auto; text-align:center; }
+
+  .section h2{ font-size:clamp(1.6rem, 3vw, 2.1rem); color:var(--ink); }
+  .section > .section-inner > p.lead{ max-width:60ch; margin:.75rem auto 0; color:#4a5257; }
+
+  .dark{ background:var(--slate); color:#fff; }
+  .dark h2{ color:#fff; }
+
+  /* ---------- about grid ---------- */
+  .grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:1.75rem; margin-top:2.5rem; text-align:left; }
+
+  .card{
+    background:#fff; padding:1.75rem;
+    border:2px dotted #9aa3a3;
+    border-radius:6px;
+    box-shadow:0 10px 24px rgba(20,20,20,.12);
+  }
+
+  .card i{ font-size:1.3rem; color:var(--ink); margin-bottom:.75rem; display:block; }
+  .card h3{ font-size:1.1rem; margin-bottom:.6rem; }
+  .card p{ margin-bottom:.6rem; line-height:1.55; color:#3a4145; font-size:.95rem; }
+  .card ol{ padding-left:1.2rem; line-height:1.8; color:#3a4145; font-size:.95rem; }
+
+  /* ---------- activities / training (front and center) ---------- */
+  .card1{
+    background:var(--ink); color:#fff; padding:2rem; border-radius:4px;
+    border:2px solid var(--teal); text-align:left; max-width:640px; margin:2.5rem auto 0;
+  }
+  .card1 h3{ color:var(--teal); margin-bottom:1rem; }
+  .card1 ul{ list-style:none; display:flex; flex-direction:column; gap:.8rem; }
+  .card1 li{ position:relative; padding-left:1.4rem; line-height:1.5; }
+  .card1 li::before{ content:"✕"; position:absolute; left:0; top:0; color:var(--gold); font-size:.85rem; }
+
+  /* ---------- training work gallery (de-emphasised as a "shop") ---------- */
+  .gallery{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1.25rem; margin-top:2.5rem; }
+
+  .product{ position:relative; overflow:hidden; border-radius:4px; aspect-ratio:1/1; }
+  .product img{ width:100%; height:100%; object-fit:cover; transition:transform .4s ease; }
+  .product:hover img{ transform:scale(1.06); }
+  .product span{ position:absolute; left:0; right:0; bottom:0; padding:.6rem .9rem; background:rgba(10,15,15,.72); color:#fff; font-size:.82rem; }
+
+  /* ---------- why choose us ---------- */
+  .why-choose-us{ background:var(--teal); color:#08201e; padding:3.5rem 1.5rem; }
+  .why-choose-us h2{ color:#08201e; }
+  .why-choose-us p{ max-width:65ch; margin:1.25rem auto 0; line-height:1.65; }
+
+  /* ---------- testimonials (slow crossfade) ---------- */
+  .testimonial-wrapper{ position:relative; width:100%; max-width:560px; margin:2.5rem auto 0; min-height:300px; }
+
+  .testimonial{
+    position:absolute; inset:0; display:flex; flex-direction:column; align-items:center;
+    background:var(--slate); color:#fff; gap:.75rem; padding:2rem 1.5rem; border-radius:6px;
+    opacity:0; transform:translateY(12px);
+    transition:opacity 1.4s ease, transform 1.4s ease;
+    pointer-events:none;
+  }
+  .testimonial.active{ opacity:1; transform:translateY(0); pointer-events:auto; }
+
+  .testimonial img{ width:5.5rem; height:5.5rem; object-fit:cover; border-radius:50%; border:3px solid var(--teal); }
+  .testimonial p{ font-size:.95rem; line-height:1.6; }
+  .testimonial hr{ width:40px; border:1px solid var(--teal); }
+
+  /* ---------- booking ---------- */
+  .booking-form{ display:flex; flex-direction:column; max-width:480px; margin:2.5rem auto 0; gap:1rem; text-align:left; }
+  .booking-form label{ font-size:.85rem; font-weight:600; color:var(--ink); }
+  .booking-form input, .booking-form textarea{ padding:.8rem; border:1px solid #ccc; border-radius:4px; font-family:inherit; font-size:.95rem; }
+  .booking-form textarea{ min-height:110px; resize:vertical; }
+  .booking-form button{ height:3rem; border:none; border-radius:4px; background:var(--teal); color:#08201e; font-weight:700; cursor:pointer; transition:background .25s; }
+  .booking-form button:hover, .booking-form button:focus-visible{ background:var(--teal-dark); color:#fff; }
+
+  /* ---------- contact ---------- */
+  .contact-list{ display:flex; flex-direction:column; gap:.9rem; align-items:center; margin-top:1.5rem; }
+  .contact-list p{ display:flex; align-items:center; gap:.6rem; font-size:.98rem; }
+  .contact-list i{ color:var(--teal); width:1.2rem; text-align:center; }
+
+  /* ---------- footer ---------- */
+  footer{ text-align:center; padding:1.5rem; background:var(--ink); color:#cfcfcf; font-size:.85rem; }
+
+  /* ---------- floating WhatsApp button ---------- */
+  .whatsapp-float{
+    position:fixed;
+    bottom:1.5rem; right:1.5rem;
+    width:56px; height:56px;
+    background:#25d366;
+    color:#fff;
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-size:1.6rem;
+    text-decoration:none;
+    z-index:1200;
+    box-shadow:0 4px 14px rgba(0,0,0,.25);
+    animation:whatsapp-glow 2.4s ease-in-out infinite;
+  }
+  .whatsapp-float:hover, .whatsapp-float:focus-visible{ background:#1ebe5b; }
+
+  @keyframes whatsapp-glow{
+    0%, 100%{ box-shadow:0 4px 14px rgba(0,0,0,.25), 0 0 0 0 rgba(37,211,102,.55); }
+    50%{ box-shadow:0 4px 14px rgba(0,0,0,.25), 0 0 0 12px rgba(37,211,102,0); }
+  }
+
+  /* ---------- mobile ---------- */
+  @media(max-width:768px){
+    .navbar ul{ display:none; flex-direction:column; gap:1rem; background:var(--ink); position:absolute; top:var(--nav-h); right:0; width:220px; padding:1.5rem; }
+    .navbar ul.open{ display:flex; }
+    .menu{ display:block; }
+    .hero-content{ padding:2rem 1.25rem; }
+    .whatsapp-float{ width:50px; height:50px; font-size:1.4rem; bottom:1.1rem; right:1.1rem; }
+  }
+</style>
 </head>
 
 <body>
 
 <!-- NAVBAR -->
-
 <nav class="navbar">
-
-<div class="logo"><img width="100" src="images/maggie-logo.jpeg" alt="  OUR LOGO"  loading="lazy"></div>
-<section class="nav2">
-<ul id="navLinks">
-<li><a href="#home">Home</a></li>
-<li><a href="#services">About us</a></li>
-<li><a href="#products">Knit and Sew Wears</a></li>
-<li><a href="#why-choose-us">Why Choose Us</a></li>
-<li><a href="#booking">Booking</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-<div class="menu" onclick="toggleMenu()">☰</div>
-</section>
+  <div class="logo"><img src="images/maggie-logo.jpeg" alt="Skill Bridge Hub Initiative logo" loading="lazy" width="44" height="44"></div>
+  <section class="nav2">
+    <ul id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">About us</a></li>
+      <li><a href="#training">Training</a></li>
+      <li><a href="#gallery">Student work</a></li>
+      <li><a href="#booking">Booking</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="menu" id="menuBtn" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+  </section>
 </nav>
+
 <div class="marquee">
   <div class="marquee-track">
-    <span>Empowering Lives Through Threads and Stitches</span>
-    <span>Empowering Lives Through Threads and Stitches</span>
+    <span>Empowering lives through threads and stitches</span>
+    <span>Empowering lives through threads and stitches</span>
+    <span>Empowering lives through threads and stitches</span>
+    <span>Empowering lives through threads and stitches</span>
   </div>
 </div>
 
 <!-- HERO -->
-
 <section id="home" class="hero">
-
-<div class="overlay"></div>
-
-<div class="hero-content">
-
-<h1>Maggie's Knit & Sew Hub</h1>
-
-<p class="hero-paragraph">
-
-     Welcome to <span class="title"> Maggies Knit and Sew Hub</span>, where creativity meets craftsmanship!
- We offer engaging training sessions for all skill levels,focusing on sewing and knitting fashionable wears,cozy sweaters and custom uniforms. 
-Join us to enhance your skills and create beautiful, personalised garments that showcase your unique style.
-</p>
-
-<div class="hero-buttons">
-
-<a href="#products" class="btn">View Collections</a>
-
-<a href="tel:+256751580728" class="btn-outline">Call</a>
-
-</div>
-
-</div>
-
+  <div class="hero-content">
+    <h1>Skill Bridge Hub <em>Initiative</em></h1>
+    <p class="hero-paragraph">
+      Hands-on training in knitting and sewing — built to give every learner a real, marketable skill and
+      the confidence to earn from it.
+    </p>
+    <div class="hero-buttons">
+      <a href="#training" class="btn">See our training</a>
+      <a href="tel:+256777657004" class="btn-outline">Call us</a>
+    </div>
+  </div>
 </section>
 
-
-<!-- SERVICES -->
-
+<!-- ABOUT -->
 <section id="services" class="section">
+  <div class="section-inner">
+    <h2 class="animate">About us</h2>
+    <div class="grid">
 
-<h2 class="animate">ABOUT US</h2>
+      <div class="card animate">
+        <i class="fa-solid fa-heart" aria-hidden="true"></i>
+        <h3>Mission</h3>
+        <p>To empower individuals from all walks of life — especially the marginalised — through accessible,
+          inclusive training in knitting and sewing.</p>
+        <p>We believe everyone deserves the chance to express their creativity and develop skills that build
+          confidence and improve livelihoods.</p>
+        <p>Through a nurturing environment, we inspire participants to express themselves through craft while
+          fostering belonging and community.</p>
+      </div>
 
-<div class="grid">
+      <div class="card animate">
+        <i class="fa-solid fa-eye" aria-hidden="true"></i>
+        <h3>Vision</h3>
+        <p>A world where knitting and sewing are not just hobbies but pathways to empowerment and
+          self-sufficiency for everyone, regardless of background.</p>
+        <p>A thriving community where people develop their talents, gain economic independence, and contribute
+          to the local economy through handmade creations.</p>
+        <p>By bridging skill development and personal growth, we cultivate a culture of creativity, resilience
+          and support.</p>
+      </div>
 
-<div class="card">
-<h3 class="animate">MISSION</h3>
-<p class="animate">At Maggies Knit and Sew Hub, Our Mission is to empower individuals from all walks of life especially the marginalized 
-     through accessible and inclusive training in knitting and sewing.</p>
-</p>We believe that everyone deserves the opportunity to express their creativity
-      and develope valuable skills that can enhance their creativity,boost their confidence and improve their livelihoods.</p>
-     <p>By providing a nurturing environment, we aim to inspire participants to express themselves through their crafts while fostering a sense of belonging andcommunity.</p>
-</div>
+      <div class="card animate">
+        <i class="fa-solid fa-bullseye" aria-hidden="true"></i>
+        <h3>Objectives</h3>
+        <p>Provide practical training in knitting and sewing.</p>
+        <p>Equip marginalised groups with income-generating skills.</p>
+        <p>Reduce unemployment and poverty in the target community.</p>
+        <p>Promote self-reliance and entrepreneurship among beneficiaries.</p>
+        <p>Foster social inclusion through a welcoming, shared space.</p>
+      </div>
 
-<div class="card">
-<h3 class="animate">VISION</h3>
-<p class="animate">
-     Our Vision is to create a world where knitting and sewing are not just hobbies but pathways to empowerment and self-sufficiency 
-     for all individuals regardless of their background.</p>
-     <p  class="animate">We envision a thriving community where everyone has the chance to develope their talents,
-     gain economic independence and contribute to the local economy through their hand made creations.
-     </p>
-     <p  class="animate">
-     By bridging the gap between skill development and personal growth,we aspire to cultivate a culture of creativity, resilience and support.
+      <div class="card animate">
+        <i class="fa-solid fa-users" aria-hidden="true"></i>
+        <h3>Target beneficiaries</h3>
+        <ol>
+          <li>Orphans</li>
+          <li>Young mothers</li>
+          <li>School dropouts</li>
+          <li>Youth</li>
+          <li>Other marginalised and vulnerable individuals</li>
+          <li>Anyone curious about knitting and sewing</li>
+        </ol>
+      </div>
 
-</p>
-</div>
-
-<div class="card">
-<h3 class="animate">OBJECTIVES</h3>
-<p class="animate">
-     To provide practical trainning in knitting and sewing skills.</p>
-      <p  class="animate">To empower marginalised groups with income-generating abilities.</p>
-     <p  class="animate">To reduce unemployment and poverty within the target community.</p>
-     <p  class="animate"> Topromote self-reliance and entrepreneurship among beneficiaries.</p>
-     <P  class="animate">Promoting social inclusion by creating a welcoming space among participants..</p>
-</div>
-
-<div class="card"  class="animate">
-<h3>TARGET BENEFICIARIES</h3>
-<ol>
-     <li>Orphans</li>
-     <li>Young mothers</li>
-     <li>School drop outs<li>youth
-    <li> other maginalised and vulnerable individuals</li>
-     <li> individuals about knit and sew</li>
-</ol>
-</div>
-
-
-
-
-</div>
-
+    </div>
+  </div>
 </section>
 
+<div class="stitch-divider"></div>
 
-<!-- PRODUCTS -->
-
-<section id="products" class="section dark"  class="animate">
-
-<h2 class="animate">Our Collections</h2>
-
-<div class="gallery">
-
-     <div class="product">
-<img src="images/51sb0bzWsiL.jpg" alt="school uniform"  loading="lazy">
-</div>
-
-<div class="product">
-<img src="images/sale.avif" alt="school uniform"  loading="lazy">
-</div>
-<div class="product">
-<img src="images/rew.webp" alt="school uniform"  loading="lazy">
-</div>
-
-<div class="product">
-<img src="images/Customized-Size-Color-Logo-Wool-Yarn-Sweater-Knitting-Machine-Unisex-V-Neck-Sweater-Smooth-Knitwear-Casual-Winter-Warm-Fashion.png_300x300.avif" alt="school uniform"  loading="lazy">
-</div>
-
-<div class="product">
-<img src="images/sew.webp" alt="Office sweater"  loading="lazy">
-</div>
-
-<div class="product">
-<img src="images/images (1).jpg" alt="Vest sweater"  loading="lazy">
-
-</div>
-
-<div class="product">
-<img src="images/images (2).jpg" alt="woolen sweaters"  loading="lazy">
-</div>
-
-<div class="product">
-<img src="images/images (3).jpg" alt="school sweaters"  loading="lazy">
-
-</div>
-
-<div class="product">
-<img src="images/images.jpg" alt="Fashionwear" loading="lazy">
-</div>
-
-<div class="product">
-<img src="images/sweaters12.jpg" alt="custom sweaters"  loading="lazy">
-
-</div>
-
-<div class="product">
-<img src="images/jumper.webp" alt="jumper"  loading="lazy">
-
-</div>
-
-<div class="product">
-<img src="images/uniform.jpeg" alt="school uniform"  loading="lazy">
-</div>
-
-<div class="product">
-<img src="images/training2.jpg" alt="training services"  loading="lazy">
-</div>
-<div class="product">
-<img src="images/sweater11.jpg" alt="woolen sweaters"  loading="lazy">
-</div>
-
-</div>
-
+<!-- TRAINING / ACTIVITIES (moved up — this is the focus of the site) -->
+<section id="training" class="section dark">
+  <div class="section-inner">
+    <h2 class="animate">What we teach</h2>
+    <p class="lead animate">Structured, practical training — not just a one-off class.</p>
+    <div class="card1 animate">
+      <h3>Activities</h3>
+      <ul>
+        <li>Training sessions in knitting</li>
+        <li>Training sessions in sewing</li>
+        <li>Mentorship and entrepreneurship guidance</li>
+        <li>Practical production workshops</li>
+        <li>Community outreach and beneficiary recruitment</li>
+      </ul>
+    </div>
+  </div>
 </section>
 
-
-<!-- TRAINING -->
-
-<section id="training" class="section"   class="animate">
-
-<div class="card1">
-<h3 class="animate">ACTIVITIES</h3>
-<p class="animate"> 
-     Trainning sessions in Knitting
-</p>
-<p>
-     Training sessions in Sewing.
-</p>
-<p>
-     Mentorship and entrepreneurship guidance.
-</p>
-<p>
-     Practical production workshops.
-</P>
-   <p>
-       Community outreach and beneficiary recruitment.
-</p>
-</div>
-
+<!-- WHY CHOOSE US -->
+<section class="why-choose-us">
+  <div class="section-inner">
+    <h2 class="animate" id="why-choose-us">Why choose us</h2>
+    <p class="animate">
+      At Skill Bridge Hub Initiative, we believe in fostering creativity and building skills in a supportive
+      environment. We pride ourselves on a vibrant, community-based approach that empowers individuals of all
+      skill levels to come together, learn and share their passion for knitting and sewing.
+      With hands-on workshops led by experienced instructors, participants gain practical skills while building
+      lasting friendships. Whether you're training for a trade or learning for yourself, our supportive
+      environment encourages creativity and collaboration, making each session an inspiring step into the
+      world of textiles.
+    </p>
+  </div>
 </section>
 
-<!--why choose us-->
-<div class="why-choose-us animate">
-     <h2>Why Choose Us.</h2>
-     <p id="why-choose-us">
-          At Maggies Knit and Sew Hub, we believe in fostering creativity and building skills in a supportive environment. 
-          We pride our selves on fostering a vibrant community through our specialised training services. 
-          Our Community-based approach empowers individuals of all skills levels to come together,learn and share their passion for knitting and sewing.
-          With hands -on workshops led by experienced instructors, participants gain practical skills while building lasting friendship
-          Whether you are crafting stylish garments or functional pieces, 
-          our supportive environment encourages creativity and collaboration,making each session an inspiring journey into the world of textiles!
-          Dive into the world of knitting and sewing with Maggies Knit and Sew Hub,become part of our crafting community. Happy crafting!
-     </p>
-</div>
+<!-- STUDENT WORK GALLERY (kept light — this supports the training, it isn't a shop) -->
+<section id="gallery" class="section">
+  <div class="section-inner">
+    <h2 class="animate">Work from our training sessions</h2>
+    <p class="lead animate">A few pieces made by our students during training and workshops.</p>
+    <div class="gallery">
+      <div class="product animate"><img src="images/51sb0bzWsiL.jpg" alt="School uniform made in training" loading="lazy" width="220" height="220"><span>School uniform</span></div>
+      <div class="product animate"><img src="images/sale.avif" alt="Knitwear piece made by a student" loading="lazy" width="220" height="220"><span>Knitwear</span></div>
+      <div class="product animate"><img src="images/rew.webp" alt="Knitted sweater made in training" loading="lazy" width="220" height="220"><span>Knitted sweater</span></div>
+      <div class="product animate"><img src="images/Customized-Size-Color-Logo-Wool-Yarn-Sweater-Knitting-Machine-Unisex-V-Neck-Sweater-Smooth-Knitwear-Casual-Winter-Warm-Fashion.png_300x300.avif" alt="V-neck sweater made in training" loading="lazy" width="220" height="220"><span>V-neck sweater</span></div>
+      <div class="product animate"><img src="images/sew.webp" alt="Sewn piece made in training" loading="lazy" width="220" height="220"><span>Sewn piece</span></div>
+      <div class="product animate"><img src="images/images (1).jpg" alt="Vest sweater made by a student" loading="lazy" width="220" height="220"><span>Vest sweater</span></div>
+      <div class="product animate"><img src="images/images (2).jpg" alt="Woolen sweater made in training" loading="lazy" width="220" height="220"><span>Woolen sweater</span></div>
+      <div class="product animate"><img src="images/images (3).jpg" alt="School sweater made in training" loading="lazy" width="220" height="220"><span>School sweater</span></div>
+      <div class="product animate"><img src="images/images.jpg" alt="Fashion piece made in training" loading="lazy" width="220" height="220"><span>Fashion piece</span></div>
+      <div class="product animate"><img src="images/sweaters12.jpg" alt="Sweater made in training" loading="lazy" width="220" height="220"><span>Sweater</span></div>
+      <div class="product animate"><img src="images/jumper.webp" alt="Jumper made in training" loading="lazy" width="220" height="220"><span>Jumper</span></div>
+      <div class="product animate"><img src="images/uniform.jpeg" alt="School uniform made in training" loading="lazy" width="220" height="220"><span>School uniform</span></div>
+      <div class="product animate"><img src="images/training2.jpg" alt="Students during a training session" loading="lazy" width="220" height="220"><span>Training in session</span></div>
+      <div class="product animate"><img src="images/sweater11.jpg" alt="Woolen sweater made in training" loading="lazy" width="220" height="220"><span>Woolen sweater</span></div>
+    </div>
+  </div>
+</section>
 
 <!-- TESTIMONIALS -->
-<section class="wrapper animate">
-<h2 class="animate">Director's Reviews</h2>
-<div class="testimonial-wrapper" class="animate">
-<div>
-<div class="testimonial active">
-<img src="images/james.jpeg" alt="our image" class="animate"  loading="lazy">
-<p class="animate">"Explore our wide selection of high-quality yarns,fabrics and sewed products.
-     Connect with like-minded individuals in our vibrant community,seek advice and find inspiration from fellow crafters."</p>
-<hr>
-<h4 class="animate">Mr. James</h4>
-</div>
-
-<div class="testimonial">
-<img class="animate" src="images/maggie3.jpeg" alt="another image of ours"  loading="lazy">
-<p class="animate">"Join our workshops and classess tailored for all skill levels. From beginner basics to advanced techniques, 
-     we provide hands on training to help learners master craft. 
-     We train all students from which ever level and comeup with strong hands on skills. Trust us with your child you won't regret. Thank  you!"</p>
-<hr>
-<h4 class="animate">Ms. Maggie</h4>
-</div>
-</div>
+<section class="section dark">
+  <div class="section-inner">
+    <h2 class="animate">Director's reviews</h2>
+    <div class="testimonial-wrapper">
+      <div class="testimonial active">
+        <img src="images/james.jpeg" alt="Photo of Mr. James" loading="lazy" width="88" height="88">
+        <p>"Our students explore a wide range of yarns, fabrics and techniques. They connect with a vibrant
+          community, get advice and find inspiration from fellow learners."</p>
+        <hr>
+        <h4>Mr. James</h4>
+      </div>
+      <div class="testimonial">
+        <img src="images/maggie3.jpeg" alt="Photo of Ms. Maggie" loading="lazy" width="88" height="88">
+        <p>"Our workshops and classes are tailored for every skill level. From beginner basics to advanced
+          techniques, we give learners hands-on training to help them master their craft. Trust us with your
+          child — you won't regret it. Thank you!"</p>
+        <hr>
+        <h4>Ms. Maggie</h4>
+      </div>
+    </div>
+  </div>
 </section>
-
-
 
 <!-- BOOKING -->
+<section id="booking" class="section">
+  <div class="section-inner">
+    <h2 class="animate">Book a training slot</h2>
+    <form class="booking-form animate" method="POST" action="https://formsubmit.co/skillbridgehubinitiative@gmail.com">
+      <input type="hidden" name="_subject" value="New Booking Request">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
 
-<section id="booking" class="section animate">
+      <label for="name">Name</label>
+      <input type="text" id="name" placeholder="Full name" name="Name" required>
 
-<h2 class="animate">Book an Order Now</h2>
+      <label for="email">Email</label>
+      <input type="email" name="Email" id="email" placeholder="Email address (optional)">
 
-<form class="booking-form" method="POST" action="https://formsubmit.co/maggiesknitandsewhub@gmail.com">
-<input type="hidden" name="_subject" value="New Booking Request">
-<input type="hidden" name="_captcha" value="false">
-<input type="hidden" name="_template" value="table">
+      <label for="number">Phone number</label>
+      <input type="tel" placeholder="Phone number" id="number" name="Phone Number" required>
 
-<label class="animate" for="name">Name</label>
-<input type="text" id="name" placeholder="Full Name" name="Name" required class="animate">
+      <label for="message">Message</label>
+      <textarea id="message" name="Message" required placeholder="Tell us what you'd like to learn"></textarea>
 
-<label for="email" class="animate">Email</label>
-<input type="email" name="Email" id="email"  placeholder="Email Address (optional)" class="animate">
-<label for="name" class="animate">Phone Number</label>
-<input type="tel" placeholder="Phone Number" id="number" name="Phone Number" required class="animate">
-<label for="message" class="animate">Message</label>
-<textarea class="animate" id="message" name="Message" required></textarea>
-
-<button type="submit" class="animate">Submit Order</button>
-
-</form>
-
+      <button type="submit">Submit request</button>
+    </form>
+  </div>
 </section>
-
 
 <!-- CONTACT -->
-
-<section id="contact" class="section dark  animate">
-
-<h2 class="animate">Contact Us</h2>
-<p class="animate"><i class="fa-brands fa-whatsapp"></i> +256 751 580 728</p>
-<p class="animate"><i class="fa-solid fa-phone"></i> +256 772 779 536</p>
-
-<p class="animate"><i class="fa-solid fa-envelope"></i>maggiesknitandsewhub@gmail.com</p>
-
-<p class="animate"><i class="fa-solid fa-location-dot"></i> Location: Masaka, Uganda</p>
-
+<section id="contact" class="section dark">
+  <div class="section-inner">
+    <h2 class="animate">Contact us</h2>
+    <div class="contact-list">
+      <p class="animate"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> +256 777 657 004</p>
+      <p class="animate"><i class="fa-solid fa-phone" aria-hidden="true"></i> +256 752 573 515</p>
+      <p class="animate"><i class="fa-solid fa-envelope" aria-hidden="true"></i> skillbridgehubinitiative@gmail.com</p>
+      <p class="animate"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Location: Masaka, Uganda</p>
+    </div>
+  </div>
 </section>
 
-
 <footer>
-
-<p class="animate">© All Rights Reserved || Maggie's Knit & Sew Hub || Powered By  Preston (Tash In Tech)</p>
-
+  <p>© All rights reserved || Skill Bridge Hub Initiative || Powered by Preston (TashInTech)</p>
 </footer>
 
+<!-- Floating WhatsApp button -->
+<a class="whatsapp-float" href="https://wa.me/256777657004" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+  <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+</a>
 
-<script src="script.js" defer></script>
+<script>
+  // mobile menu toggle
+  const menuBtn = document.getElementById("menuBtn");
+  const navLinks = document.getElementById("navLinks");
+
+  menuBtn.addEventListener("click", () => {
+    const isOpen = navLinks.classList.toggle("open");
+    menuBtn.setAttribute("aria-expanded", isOpen);
+  });
+
+  navLinks.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("open");
+      menuBtn.setAttribute("aria-expanded", "false");
+    });
+  });
+
+  // testimonial rotation — slow crossfade (timing handled in CSS transition)
+  const testimonials = document.querySelectorAll(".testimonial");
+  let index = 0;
+
+  function showTestimonial(){
+    testimonials.forEach(t => t.classList.remove("active"));
+    index = (index + 1) % testimonials.length;
+    testimonials[index].classList.add("active");
+  }
+
+  setInterval(showTestimonial, 7000);
+
+  // scroll-in animation
+  const animatedElements = document.querySelectorAll(".animate");
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add("show");
+    });
+  }, { threshold: 0.2 });
+  animatedElements.forEach(el => observer.observe(el));
+
+  // booking form: validate email, then hand off to WhatsApp
+  document.querySelector(".booking-form").addEventListener("submit", function(e){
+    const email = document.getElementById("email").value;
+    const phone = document.getElementById("number").value;
+    const message = document.getElementById("message").value;
+    const name = document.getElementById("name").value;
+
+    if (email !== "") {
+      const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/i;
+      if (!emailPattern.test(email)) {
+        e.preventDefault();
+        alert("Please enter a valid email.");
+        return;
+      }
+    }
+
+    const text = `Name: ${name}\nPhone Number: ${phone}\nMessage: ${message}\nEmail: ${email}`;
+    window.open(`https://wa.me/256777657004?text=${encodeURIComponent(text)}`);
+  });
+</script>
 
 </body>
 </html>
-
