@@ -49,7 +49,6 @@
     --slate:#2f4f4f;
     --teal:#0fa89f;
     --teal-dark:#0b7f78;
-    --gold:#d99a3c;
     --cream:#fbfaf7;
     --text:#20262a;
     --nav-h:64px;
@@ -100,7 +99,7 @@
   /* ---------- marquee ---------- */
   .marquee{
     position:fixed; top:var(--nav-h); left:0; right:0; height:var(--marquee-h);
-    overflow:hidden; background:var(--gold); z-index:999;
+    overflow:hidden; background:var(--teal); z-index:999;
     border-top:1px dashed rgba(0,0,0,.35); border-bottom:1px dashed rgba(0,0,0,.35);
   }
 
@@ -132,7 +131,7 @@
 
   /* ---------- full-width section shell ---------- */
   .section{ width:100%; padding:4.5rem 1.5rem; }
-  .section-inner{ max-width:1100px; margin:0 auto; text-align:center; }
+  .section-inner{ max-width:1440px; margin:0 auto; text-align:center; }
 
   .section h2{ font-size:clamp(1.6rem, 3vw, 2.1rem); color:var(--ink); }
   .section > .section-inner > p.lead{ max-width:60ch; margin:.75rem auto 0; color:#4a5257; }
@@ -163,7 +162,7 @@
   .card1 h3{ color:var(--teal); margin-bottom:1rem; }
   .card1 ul{ list-style:none; display:flex; flex-direction:column; gap:.8rem; }
   .card1 li{ position:relative; padding-left:1.4rem; line-height:1.5; }
-  .card1 li::before{ content:"✕"; position:absolute; left:0; top:0; color:var(--gold); font-size:.85rem; }
+  .card1 li::before{ content:"✕"; position:absolute; left:0; top:0; color:var(--teal); font-size:.85rem; }
 
   /* ---------- training work gallery (de-emphasised as a "shop") ---------- */
   .gallery{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1.25rem; margin-top:2.5rem; }
@@ -179,7 +178,7 @@
   .why-choose-us p{ max-width:65ch; margin:1.25rem auto 0; line-height:1.65; }
 
   /* ---------- testimonials (slow crossfade) ---------- */
-  .testimonial-wrapper{ position:relative; width:100%; max-width:560px; margin:2.5rem auto 0; min-height:300px; }
+  .testimonial-wrapper{ position:relative; width:100%; max-width:560px; margin:2.5rem auto 0; min-height:460px; }
 
   .testimonial{
     position:absolute; inset:0; display:flex; flex-direction:column; align-items:center;
@@ -202,30 +201,75 @@
   .booking-form button{ height:3rem; border:none; border-radius:4px; background:var(--teal); color:#08201e; font-weight:700; cursor:pointer; transition:background .25s; }
   .booking-form button:hover, .booking-form button:focus-visible{ background:var(--teal-dark); color:#fff; }
 
+  /* ---------- FAQ ---------- */
+  .faq-list{ max-width:720px; margin:2.5rem auto 0; text-align:left; display:flex; flex-direction:column; gap:.9rem; }
+  .faq-item{ border:1px solid #d8d8d3; border-radius:8px; background:#fff; overflow:hidden; }
+  .faq-question{
+    width:100%; display:flex; align-items:center; justify-content:space-between; gap:1rem;
+    background:none; border:none; text-align:left; cursor:pointer;
+    padding:1.1rem 1.4rem; font-family:'Inter', sans-serif; font-weight:600; font-size:.98rem; color:var(--ink);
+  }
+  .faq-icon{ font-size:1.3rem; color:var(--teal); flex-shrink:0; line-height:1; }
+  .faq-answer{ max-height:0; overflow:hidden; transition:max-height .35s ease; padding:0 1.4rem; }
+  .faq-answer p{ padding-bottom:1.1rem; color:#4a5257; line-height:1.6; font-size:.95rem; }
+  .faq-item.open .faq-answer{ max-height:280px; }
+
   /* ---------- contact ---------- */
-  .contact-list{ display:flex; flex-direction:column; gap:.9rem; align-items:center; margin-top:1.5rem; }
-  .contact-list p{ display:flex; align-items:center; gap:.6rem; font-size:.98rem; }
-  .contact-list i{ color:var(--teal); width:1.2rem; text-align:center; }
+  .contact-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:1.25rem;
+    margin-top:2.25rem;
+    text-align:left;
+  }
+  .contact-card{
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.18);
+    border-radius:8px;
+    padding:1.5rem;
+  }
+  .contact-card i{ color:var(--teal); font-size:1.3rem; margin-bottom:.6rem; display:block; }
+  .contact-card h3{ font-family:'Inter', sans-serif; font-size:.8rem; text-transform:uppercase; letter-spacing:.06em; color:#b9c4c4; margin-bottom:.4rem; }
+  .contact-card a, .contact-card p{ color:#fff; font-size:1rem; text-decoration:none; word-break:break-word; }
+  .contact-card a:hover, .contact-card a:focus-visible{ color:var(--teal); }
 
   /* ---------- footer ---------- */
   footer{ text-align:center; padding:1.5rem; background:var(--ink); color:#cfcfcf; font-size:.85rem; }
+  footer a{ color:var(--teal); text-decoration:underline; }
+  footer a:hover, footer a:focus-visible{ color:#fff; }
 
   /* ---------- floating WhatsApp button ---------- */
   .whatsapp-float{
     position:fixed;
     bottom:1.5rem; right:1.5rem;
+    display:flex; align-items:center; gap:.7rem;
+    text-decoration:none;
+    z-index:1200;
+  }
+  .whatsapp-label{
+    background:#fff;
+    color:var(--ink);
+    padding:.55rem .95rem;
+    border-radius:999px;
+    font-weight:600;
+    font-size:.9rem;
+    white-space:nowrap;
+    display:flex; align-items:center; gap:.5rem;
+    box-shadow:0 4px 12px rgba(0,0,0,.15);
+  }
+  .whatsapp-label i{ font-size:.9rem; color:#25d366; }
+  .whatsapp-circle{
     width:56px; height:56px;
+    flex-shrink:0;
     background:#25d366;
     color:#fff;
     border-radius:50%;
     display:flex; align-items:center; justify-content:center;
     font-size:1.6rem;
-    text-decoration:none;
-    z-index:1200;
     box-shadow:0 4px 14px rgba(0,0,0,.25);
     animation:whatsapp-glow 2.4s ease-in-out infinite;
   }
-  .whatsapp-float:hover, .whatsapp-float:focus-visible{ background:#1ebe5b; }
+  .whatsapp-float:hover .whatsapp-circle, .whatsapp-float:focus-visible .whatsapp-circle{ background:#1ebe5b; }
 
   @keyframes whatsapp-glow{
     0%, 100%{ box-shadow:0 4px 14px rgba(0,0,0,.25), 0 0 0 0 rgba(37,211,102,.55); }
@@ -238,7 +282,10 @@
     .navbar ul.open{ display:flex; }
     .menu{ display:block; }
     .hero-content{ padding:2rem 1.25rem; }
-    .whatsapp-float{ width:50px; height:50px; font-size:1.4rem; bottom:1.1rem; right:1.1rem; }
+    .testimonial-wrapper{ min-height:560px; }
+    .whatsapp-float{ bottom:1.1rem; right:1.1rem; gap:.5rem; }
+    .whatsapp-label{ padding:.45rem .75rem; font-size:.78rem; }
+    .whatsapp-circle{ width:48px; height:48px; font-size:1.4rem; }
   }
 </style>
 </head>
@@ -255,6 +302,7 @@
       <li><a href="#training">Training</a></li>
       <li><a href="#gallery">Student work</a></li>
       <li><a href="#booking">Booking</a></li>
+      <li><a href="#faq">FAQ</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <button class="menu" id="menuBtn" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
@@ -263,10 +311,10 @@
 
 <div class="marquee">
   <div class="marquee-track">
-    <span>Empowering lives through threads and stitches</span>
-    <span>Empowering lives through threads and stitches</span>
-    <span>Empowering lives through threads and stitches</span>
-    <span>Empowering lives through threads and stitches</span>
+    <span>THREADS OF HOPE, STITCHES OF CHANGE</span>
+    <span>THREADS OF HOPE, STITCHES OF CHANGE</span>
+    <span>THREADS OF HOPE, STITCHES OF CHANGE</span>
+    <span>THREADS OF HOPE, STITCHES OF CHANGE</span>
   </div>
 </div>
 
@@ -409,6 +457,9 @@
         <img src="images/james.jpeg" alt="Photo of Mr. James" loading="lazy" width="88" height="88">
         <p>"Our students explore a wide range of yarns, fabrics and techniques. They connect with a vibrant
           community, get advice and find inspiration from fellow learners."</p>
+        <p>"What stands out to me as director is how quickly nervous beginners become confident makers.
+          Watching someone finish their first sweater and realise they can sell it — that's the whole point
+          of this place."</p>
         <hr>
         <h4>Mr. James</h4>
       </div>
@@ -417,6 +468,8 @@
         <p>"Our workshops and classes are tailored for every skill level. From beginner basics to advanced
           techniques, we give learners hands-on training to help them master their craft. Trust us with your
           child — you won't regret it. Thank you!"</p>
+        <p>"Beyond the technical side, we spend real time on mentorship — budgeting materials, pricing
+          finished pieces, and finding first customers. Training doesn't stop at the last stitch."</p>
         <hr>
         <h4>Ms. Maggie</h4>
       </div>
@@ -450,26 +503,111 @@
   </div>
 </section>
 
+<!-- FAQ -->
+<section id="faq" class="section">
+  <div class="section-inner">
+    <h2 class="animate">Frequently asked questions</h2>
+    <p class="lead animate">Tap a question to see the answer.</p>
+    <div class="faq-list">
+
+      <div class="faq-item animate">
+        <button class="faq-question" aria-expanded="false">
+          <span>Do I need experience to join the training?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>No prior experience is needed. We take learners from complete beginners through to advanced skill
+            levels, so you start wherever you are.</p>
+        </div>
+      </div>
+
+      <div class="faq-item animate">
+        <button class="faq-question" aria-expanded="false">
+          <span>How long does a training program take?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Sessions combine hands-on knitting and sewing practice with mentorship, run in structured blocks.
+            Exact duration depends on the track you join — message us on WhatsApp for the current schedule.</p>
+        </div>
+      </div>
+
+      <div class="faq-item animate">
+        <button class="faq-question" aria-expanded="false">
+          <span>Is there a cost to enroll?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>We keep training accessible, especially for orphans, young mothers, school dropouts and other
+            vulnerable groups. Contact us directly for current fees and any support available.</p>
+        </div>
+      </div>
+
+      <div class="faq-item animate">
+        <button class="faq-question" aria-expanded="false">
+          <span>What happens after I complete training?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Beyond technique, we cover mentorship and entrepreneurship guidance — pricing your work, sourcing
+            materials, and finding your first customers — so training leads to real income, not just a
+            certificate.</p>
+        </div>
+      </div>
+
+      <div class="faq-item animate">
+        <button class="faq-question" aria-expanded="false">
+          <span>How do I book a training slot?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Fill in the booking form above, or message us directly using the WhatsApp button in the corner of
+            this page — we'll confirm your slot and next steps from there.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section id="contact" class="section dark">
   <div class="section-inner">
     <h2 class="animate">Contact us</h2>
-    <div class="contact-list">
-      <p class="animate"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> +256 777 657 004</p>
-      <p class="animate"><i class="fa-solid fa-phone" aria-hidden="true"></i> +256 752 573 515</p>
-      <p class="animate"><i class="fa-solid fa-envelope" aria-hidden="true"></i> skillbridgehubinitiative@gmail.com</p>
-      <p class="animate"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Location: Masaka, Uganda</p>
+    <p class="lead animate">Reach us any way that suits you — we usually reply fastest on WhatsApp.</p>
+    <div class="contact-grid">
+      <div class="contact-card animate">
+        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+        <h3>WhatsApp</h3>
+        <a href="https://wa.me/256777657004" target="_blank" rel="noopener">+256 777 657 004</a>
+      </div>
+      <div class="contact-card animate">
+        <i class="fa-solid fa-phone" aria-hidden="true"></i>
+        <h3>Phone</h3>
+        <a href="tel:+256752573515">+256 752 573 515</a>
+      </div>
+      <div class="contact-card animate">
+        <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+        <h3>Email</h3>
+        <a href="mailto:skillbridgehubinitiative@gmail.com">skillbridgehubinitiative@gmail.com</a>
+      </div>
+      <div class="contact-card animate">
+        <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+        <h3>Location</h3>
+        <p>Masaka, Uganda</p>
+      </div>
     </div>
   </div>
 </section>
 
 <footer>
-  <p>© All rights reserved || Skill Bridge Hub Initiative || Powered by Preston (TashInTech)</p>
+  <p>© All rights reserved || Skill Bridge Hub Initiative || Powered by Preston (<a href="https://portifolio.prestontash.com/" target="_blank" rel="noopener">TashInTech</a>)</p>
 </footer>
 
 <!-- Floating WhatsApp button -->
 <a class="whatsapp-float" href="https://wa.me/256777657004" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
-  <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+  <span class="whatsapp-label">WhatsApp us now <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+  <span class="whatsapp-circle"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></span>
 </a>
 
 <script>
@@ -509,6 +647,17 @@
     });
   }, { threshold: 0.2 });
   animatedElements.forEach(el => observer.observe(el));
+
+  // FAQ accordion
+  document.querySelectorAll(".faq-question").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const item = btn.closest(".faq-item");
+      const isOpen = item.classList.contains("open");
+      item.classList.toggle("open", !isOpen);
+      btn.setAttribute("aria-expanded", String(!isOpen));
+      btn.querySelector(".faq-icon").textContent = isOpen ? "+" : "−";
+    });
+  });
 
   // booking form: validate email, then hand off to WhatsApp
   document.querySelector(".booking-form").addEventListener("submit", function(e){
