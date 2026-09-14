@@ -87,7 +87,15 @@
     padding:0 1.5rem; background:var(--ink); color:#fff; z-index:1000;
   }
 
-  .logo img{ width:44px; height:44px; object-fit:cover; border-radius:50%; border:2px solid var(--teal); }
+  .logo{ display:flex; align-items:center; gap:.6rem; }
+.logo img{ width:44px; height:44px; object-fit:cover; border-radius:50%; border:2px solid var(--teal); }
+.logo-text{
+  font-family:'Fraunces', serif;
+  font-weight:600;
+  font-size:1.05rem;
+  color:#fff;
+  white-space:nowrap;
+}
   .nav2{ display:flex; align-items:center; }
   .navbar ul{ display:flex; gap:1.75rem; list-style:none; }
   .navbar a{ color:#fff; text-decoration:none; font-size:.95rem; letter-spacing:.02em; }
