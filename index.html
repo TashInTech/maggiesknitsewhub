@@ -17,7 +17,7 @@
 <!-- Update this once the live domain is confirmed -->
 <!-- <link rel="canonical" href="https://www.yourdomain.com/"> -->
 
-<link rel="icon" href="new badge.jpeg">
+<link rel="icon" href="images/new badge.jpeg">
 <link rel="preload" as="image" href="images/training2.jpg" fetchpriority="high">
 
 <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
@@ -87,7 +87,7 @@
     padding:0 1.5rem; background:var(--ink); color:#fff; z-index:1000;
   }
 
-  .logo{ display:flex; align-items:center; gap:.6rem; }
+.logo{ display:flex; align-items:center; gap:.6rem; }
 .logo img{ width:44px; height:44px; object-fit:cover; border-radius:50%; border:2px solid var(--teal); }
 .logo-text{
   font-family:'Fraunces', serif;
@@ -183,23 +183,46 @@
   /* ---------- why choose us ---------- */
   .why-choose-us{ background:var(--teal); color:#08201e; padding:3.5rem 1.5rem; }
   .why-choose-us h2{ color:#08201e; }
-  .why-choose-us p{ max-width:65ch; margin:1.25rem auto 0; line-height:1.65; }
+  .why-choose-us p{ max-width:65ch; margin:1rem auto 0; line-height:1.65; }
 
-  /* ---------- testimonials (slow crossfade) ---------- */
-  .testimonial-wrapper{ position:relative; width:100%; max-width:560px; margin:2.5rem auto 0; min-height:460px; }
+  /* ---------- testimonials (slow crossfade, styled card) ---------- */
+  .testimonial-wrapper{ position:relative; width:100%; max-width:560px; margin:2.5rem auto 0; min-height:440px; }
 
   .testimonial{
-    position:absolute; inset:0; display:flex; flex-direction:column; align-items:center;
-    background:var(--slate); color:#fff; gap:.75rem; padding:2rem 1.5rem; border-radius:6px;
-    opacity:0; transform:translateY(12px);
+    position:absolute; inset:0;
+    display:flex; flex-direction:column;
+    background:#fff; color:var(--text);
+    padding:2.25rem 2rem;
+    border-radius:14px;
+    border-top:7px dotted var(--teal);
+    text-align:left;
+    opacity:0; transform:translateY(16px);
     transition:opacity 1.4s ease, transform 1.4s ease;
     pointer-events:none;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   }
   .testimonial.active{ opacity:1; transform:translateY(0); pointer-events:auto; }
 
-  .testimonial img{ width:5.5rem; height:5.5rem; object-fit:cover; border-radius:50%; border:3px solid var(--teal); }
-  .testimonial p{ font-size:.95rem; line-height:1.6; }
-  .testimonial hr{ width:40px; border:1px solid var(--teal); }
+  .testimonial-quote-icon{
+    width:44px; height:44px; flex-shrink:0;
+    border-radius:50%;
+    background:var(--teal); color:#fff;
+    display:flex; align-items:center; justify-content:center;
+    font-size:1.05rem;
+    margin-bottom:1.1rem;
+  }
+
+  .testimonial p{ font-size:.95rem; line-height:1.65; color:#3a4145; margin-bottom:.9rem; }
+  .testimonial p:last-of-type{ margin-bottom:1.4rem; }
+
+  .testimonial-author{
+    display:flex; align-items:center; gap:.8rem;
+    margin-top:auto; padding-top:1rem;
+    border-top:1px dashed #e0e0dc;
+  }
+  .testimonial-author img{ width:3.2rem; height:3.2rem; object-fit:cover; border-radius:50%; border:2px solid var(--teal); flex-shrink:0; }
+  .testimonial-author h4{ font-family:'Fraunces', serif; font-size:1rem; color:var(--ink); }
+  .testimonial-author span{ font-size:.8rem; color:#6b7378; }
 
   /* ---------- booking ---------- */
   .booking-form{ display:flex; flex-direction:column; max-width:480px; margin:2.5rem auto 0; gap:1rem; text-align:left; }
@@ -290,7 +313,7 @@
     .navbar ul.open{ display:flex; }
     .menu{ display:block; }
     .hero-content{ padding:2rem 1.25rem; }
-    .testimonial-wrapper{ min-height:560px; }
+    .testimonial-wrapper{ min-height:520px; }
     .whatsapp-float{ bottom:1.1rem; right:1.1rem; gap:.5rem; }
     .whatsapp-label{ padding:.45rem .75rem; font-size:.78rem; }
     .whatsapp-circle{ width:48px; height:48px; font-size:1.4rem; }
@@ -302,9 +325,9 @@
 
 <!-- NAVBAR -->
 <nav class="navbar">
-  <div class="logo"><img src="images/new badge.jpeg" alt="Skill Bridge Hub Initiative logo" loading="lazy" width="44" height="44">
-   <span class="logo-text">Skill Bridge Hub</span>
-  </div>
+  <div class="logo"><img src="images/maggie-logo.jpeg" alt="Skill Bridge Hub Initiative logo" loading="lazy" width="44" height="44">
+ <span class="logo-text">Skill Bridge Hub</span>
+</div>
   <section class="nav2">
     <ul id="navLinks">
       <li><a href="#home">Home</a></li>
@@ -422,15 +445,9 @@
 <section class="why-choose-us">
   <div class="section-inner">
     <h2 class="animate" id="why-choose-us">Why choose us</h2>
-    <p class="animate">
-      At Skill Bridge Hub Initiative, we believe in fostering creativity and building skills in a supportive
-      environment. We pride ourselves on a vibrant, community-based approach that empowers individuals of all
-      skill levels to come together, learn and share their passion for knitting and sewing.
-      With hands-on workshops led by experienced instructors, participants gain practical skills while building
-      lasting friendships. Whether you're training for a trade or learning for yourself, our supportive
-      environment encourages creativity and collaboration, making each session an inspiring step into the
-      world of textiles.
-    </p>
+    <p class="animate">At Skill Bridge Hub Initiative, we believe in fostering creativity and building skills in a supportive, community-based environment — bringing people of every skill level together to learn and share a passion for knitting and sewing.</p>
+    <p class="animate">With hands-on workshops led by experienced instructors, participants gain practical skills while building lasting friendships and real confidence.</p>
+    <p class="animate">Whether you're training for a trade or learning for yourself, our supportive space encourages creativity and collaboration — making each session an inspiring step into the world of textiles.</p>
   </div>
 </section>
 
@@ -464,24 +481,34 @@
     <h2 class="animate">Director's reviews</h2>
     <div class="testimonial-wrapper">
       <div class="testimonial active">
-        <img src="images/man.jpeg" alt="Photo of Mr. James" loading="lazy" width="88" height="88">
+        <span class="testimonial-quote-icon"><i class="fa-solid fa-quote-left" aria-hidden="true"></i></span>
         <p>"Our students explore a wide range of yarns, fabrics and techniques. They connect with a vibrant
           community, get advice and find inspiration from fellow learners."</p>
         <p>"What stands out to me as director is how quickly nervous beginners become confident makers.
           Watching someone finish their first sweater and realise they can sell it — that's the whole point
           of this place."</p>
-        <hr>
-        <h4>Mr. .......</h4>
+        <div class="testimonial-author">
+          <img src="images/man.jpeg" alt="Photo of Mr. James" loading="lazy" width="52" height="52">
+          <div>
+            <h4>Mr. ......</h4>
+            <span>Director</span>
+          </div>
+        </div>
       </div>
       <div class="testimonial">
-        <img src="images/maggie3.jpeg" alt="Photo of Ms. Maggie" loading="lazy" width="88" height="88">
+        <span class="testimonial-quote-icon"><i class="fa-solid fa-quote-left" aria-hidden="true"></i></span>
         <p>"Our workshops and classes are tailored for every skill level. From beginner basics to advanced
           techniques, we give learners hands-on training to help them master their craft. Trust us with your
           child — you won't regret it. Thank you!"</p>
         <p>"Beyond the technical side, we spend real time on mentorship — budgeting materials, pricing
           finished pieces, and finding first customers. Training doesn't stop at the last stitch."</p>
-        <hr>
-        <h4>Ms. Maggie</h4>
+        <div class="testimonial-author">
+          <img src="images/maggie3.jpeg" alt="Photo of Ms. Maggie" loading="lazy" width="52" height="52">
+          <div>
+            <h4>Ms. Maggie</h4>
+            <span>Director</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
